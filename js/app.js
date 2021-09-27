@@ -46,6 +46,9 @@ function leerDatoCurso(curso) {
 function carritoHTML() {
 
     articulosCarrito.forEach( curso => {// iretar sobre cada objeto mas rapido
+        //  LIMPIAR EL HTML
+            limpiarHtml();
+        //generar el HTML
         const row = document.createElement('tr');
         row.innerHTML= `
         <td>
@@ -55,4 +58,8 @@ function carritoHTML() {
         //Agrega el HTML del carrito al tbody
         contedorCarrito.appendChild(row);
     })
+}
+
+function limpiarHtml() {
+    contedorCarrito.innerHTML='';
 }
