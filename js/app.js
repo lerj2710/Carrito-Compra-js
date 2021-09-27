@@ -8,8 +8,15 @@ let articulosCarrito = [];
 //============== Resgistrar los eventos=================
 cargarEventListeners();
 function cargarEventListeners() {// esta funcion carga los eventos por defecto 
+    
     //Cuando agregas un curso precionado "Agregar carrito"
     listaCursos.addEventListener('click', agregarCurso);
+
+    //vaciar carrito
+    vaciarCarritoBtn.addEventListener('click', ()=>{
+        articulosCarrito= [];// resetear el html
+        limpiarHtml(); // limpiar el html
+    });
 }
 
 
