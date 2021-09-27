@@ -17,16 +17,17 @@ function cargarEventListeners() {// esta funcion carga los eventos por defecto
 
 function agregarCurso(e) {
     e.preventDefault();
+
     if (e.target.classList.contains('agregar-carrito')) {
         const cursoSeleccionado = e.target.parentElement.parentElement;// escalando de padre a hijo
+      //enviando el curso slelecionad
         leerDatoCurso(cursoSeleccionado);
     }
 }
 
 //leer el contenido HTML y al que le dimos click
 function leerDatoCurso(curso) {
-    console.log(curso)
-    // crear un objecto que muestre la informacion del curso
+       // crear un objecto que muestre la informacion del curso
     const infoCurso = {
         imagen : curso.querySelector('img').src,
         titulo : curso.querySelector('h4').textContent,
@@ -36,7 +37,7 @@ function leerDatoCurso(curso) {
     };
     //Agregar elementos al carrito
     articulosCarrito = [...articulosCarrito, infoCurso];// usando express operartor
-    // console.log(articulosCarrito);
+    console.log(articulosCarrito);
     carritoHTML();
 }
 
@@ -45,15 +46,28 @@ function leerDatoCurso(curso) {
 
 function carritoHTML() {
 
+    //  LIMPIAR EL HTML
+        limpiarHtml();
     articulosCarrito.forEach( curso => {// iretar sobre cada objeto mas rapido
-        //  LIMPIAR EL HTML
-            limpiarHtml();
+        //usar distructurar objecto
+        const {imagen, titulo,precio,id}=curso;
         //generar el HTML
+        console.log(curso)
         const row = document.createElement('tr');
         row.innerHTML= `
-        <td>
-            ${curso.titulo}
-        </td>
+            <td>
+               <img src" ${imagen}" width="100">
+            </td>
+            <td>
+                ${titulo}
+            </td>
+            <td>
+                ${precio}
+            </td>
+            <td>
+                <a href="#" class="borrar-curso" data-id="${id}">X</a>
+            </td>
+       
         `;
         //Agrega el HTML del carrito al tbody
         contenedorCarrito.appendChild(row);
@@ -64,6 +78,6 @@ function limpiarHtml() {
  //forma lenta
     //   contenedorCarrito.innerHTML='';
     while (contenedorCarrito.firstChild) {
-        contenedorCarrito.remove(contenedorCarrito.firstChild);
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
     }
 }
