@@ -4,7 +4,8 @@
   "description": "modificando aun frontend profesional",
   "main": "index.js",
   "scripts": {
-    "babel": "babel entrada.js --out-file salida.js --presets=@babel/preset-env"
+    "babel": "babel entrada.js --out-file salida.js --presets=@babel/preset-env",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
