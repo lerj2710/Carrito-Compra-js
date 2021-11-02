@@ -1,0 +1,26 @@
+{
+  "name": "carrito-compra",
+  "version": "1.0.0",
+  "description": "modificando aun frontend profesional",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel entrada.js --out-file salida.js --presets=@babel/preset-env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lerj2710/Carrito-Compra-js.git"
+  },
+  "author": "luis rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lerj2710/Carrito-Compra-js/issues"
+  },
+  "homepage": "https://github.com/lerj2710/Carrito-Compra-js#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
