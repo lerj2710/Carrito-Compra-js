@@ -1,5 +1,5 @@
 import {vaciarCarritoBtn, listaCursos, carrito } from './selectores.js'
-import {agregarCurso, eliminarX} from './funciones.js';
+import {agregarCurso, eliminarX, vaciarCarrito} from './funciones.js';
 
 //============== Resgistrar los eventos=================
  cargarEventListeners();
@@ -12,8 +12,5 @@ function cargarEventListeners() {// esta funcion carga los eventos por defecto
     carrito.addEventListener('click', eliminarX);
 
     //vaciar carrito
-    vaciarCarritoBtn.addEventListener('click', () => {
-        articulosCarrito= [];// resetear el html
-        limpiarHtml(); // limpiar el html
-    });
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 }

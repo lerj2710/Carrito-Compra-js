@@ -15,10 +15,14 @@ export function eliminarX(e) {
        const cursosId = e.target.getAttribute('data-id');
         // eliminar el arreglo desde articulosCarrito por el data-id    
         articulosCarrito = articulosCarrito.filter( curso => curso.id !== cursosId);
-        console.log(articulosCarrito);
+        // console.log(articulosCarrito);
     }
     carritoHTML();// volver a mostrar el html ó cargar el html desde cero
     
+}
+export function vaciarCarrito() {
+            articulosCarrito= [];// resetear el html
+            limpiarHtml(); // limpiar el html
 }
 
 //leer el contenido HTML y al que le dimos click
@@ -51,7 +55,7 @@ function leerDatoCurso(curso) {
             //Agregar elementos al carrito
             articulosCarrito = [...articulosCarrito, infoCurso];// usando express operartor
         }             
-        console.log(articulosCarrito);
+        // console.log(articulosCarrito);
     
     carritoHTML();
 }
